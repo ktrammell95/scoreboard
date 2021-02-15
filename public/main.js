@@ -1,5 +1,5 @@
 function main() {
-  let currentPlayer = 1
+  // Dealing with Scores
   let team1Points = 0
   let team2Points = 0
 
@@ -35,6 +35,24 @@ function main() {
   team1Subtract.addEventListener('click', decreaseScore1)
   team2Add.addEventListener('click', increaseScore2)
   team2Subtract.addEventListener('click', decreaseScore2)
+
+  // Dealing with Team Names
+
+  const inputElement1 = document.querySelector('.team1 input')
+  const team1Name = document.querySelector('.team1 h2')
+  const updateTeam1Name = event => {
+    const currentInputValue1 = event.target.value
+    team1Name.textContent = currentInputValue1
+  }
+  inputElement1.addEventListener('input', updateTeam1Name)
+
+  const inputElement2 = document.querySelector('.team2 input')
+  const team2Name = document.querySelector('.team2 h2')
+  const updateTeam2Name = event => {
+    const currentInputValue2 = event.target.value
+    team2Name.textContent = currentInputValue2
+  }
+  inputElement2.addEventListener('input', updateTeam2Name)
 }
 
 document.addEventListener('DOMContentLoaded', main)
