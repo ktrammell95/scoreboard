@@ -9,26 +9,42 @@ function main() {
   const team2Subtract = document.querySelector('.team2 .subtract')
 
   const increaseScore1 = event => {
-    team1Points++
-    let points = document.querySelector('.team1 h3')
-    points.textContent = team1Points
+    if (team1Points === 21) {
+      alert('Player Wins!!')
+    } else {
+      team1Points++
+      let points = document.querySelector('.team1 h3')
+      points.textContent = team1Points
+    }
   }
   const decreaseScore1 = event => {
-    team1Points--
-    let points = document.querySelector('.team1 h3')
-    points.textContent = team1Points
+    if (team1Points === 0) {
+      alert('Score cannot go below 0')
+    } else {
+      team1Points--
+      let points = document.querySelector('.team1 h3')
+      points.textContent = team1Points
+    }
   }
 
   const increaseScore2 = event => {
-    team2Points++
-    let points = document.querySelector('.team2 h3')
-    points.textContent = team2Points
+    if (team2Points === 21) {
+      alert('Player Wins!!')
+    } else {
+      team2Points++
+      let points = document.querySelector('.team2 h3')
+      points.textContent = team2Points
+    }
   }
 
   const decreaseScore2 = event => {
-    team2Points--
-    let points = document.querySelector('.team2 h3')
-    points.textContent = team2Points
+    if (team2Points === 0) {
+      alert('Score cannot go below 0')
+    } else {
+      team2Points--
+      let points = document.querySelector('.team2 h3')
+      points.textContent = team2Points
+    }
   }
 
   team1Add.addEventListener('click', increaseScore1)
