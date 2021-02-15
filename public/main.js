@@ -52,6 +52,18 @@ function main() {
   team2Add.addEventListener('click', increaseScore2)
   team2Subtract.addEventListener('click', decreaseScore2)
 
+  // Reset Scores
+
+  const reset = document.querySelector('.reset')
+  const resetScores = event => {
+    let team1Points = document.querySelector('.team1 h3')
+    team1Points.textContent = 0
+    let team2Points = document.querySelector('.team2 h3')
+    team2Points.textContent = 0
+  }
+
+  reset.addEventListener('click', resetScores)
+
   // Dealing with Team Names
 
   const inputElement1 = document.querySelector('.team1 input')
